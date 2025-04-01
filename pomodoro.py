@@ -7,24 +7,22 @@ class PomodoroTimer:
         self.root.title("Pomodoro Timer")
         self.root.geometry("400x250")
         self.root.resizable(False, False)
-        self.root.configure(bg='#181818')  # Dark background (YouTube-inspired)
+        self.root.configure(bg='#181818')  
 
-        # Apply YouTube-inspired styles
         self.style = ttk.Style()
-        self.style.theme_use("clam")  # Use a theme that supports custom styling
+        self.style.theme_use("clam")  
         self.style.configure("Red.TButton",
                              font=("Helvetica", 12),
                              foreground="white",
-                             background="#FF0000",  # YouTube red
+                             background="#FF0000",
                              borderwidth=1,
                              relief="flat")
         self.style.map("Red.TButton",
-                       background=[("active", "#CC0000")],  # Darker red on hover
+                       background=[("active", "#CC0000")],  
                        foreground=[("active", "white")])
 
         self.style.configure("TLabel", font=("Helvetica", 40), background="#181818", foreground="white")
 
-        # Timer label
         self.timer_label = ttk.Label(self.root, text="25:00", style="TLabel")
         self.timer_label.pack(pady=20)
 
@@ -36,11 +34,9 @@ class PomodoroTimer:
         ]
         self.current_video_index = 0
         
-        # Play music button
         self.play_button = ttk.Button(self.root, text="Play Music", style="Red.TButton", command=self.play_music)
         self.play_button.pack(pady=10)
 
-        # Start and reset buttons
         self.start_button = ttk.Button(self.root, text="Start", style="Red.TButton", command=self.start_timer)
         self.start_button.pack(side="left", padx=20)
 
